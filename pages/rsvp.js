@@ -7,17 +7,17 @@ export default function RSVP() {
 
   return (
     <Layout>
-      <h2>🎉 {event || 'Event Details'}</h2>
-      {event ? (
-        <div style={{ marginTop: '20px', textAlign: 'left', display: 'inline-block' }}>
-          <p><strong>📅 Date:</strong> {date}</p>
-          <p><strong>📍 Location:</strong> {location}</p>
-          {rsvp && (
-            <p><strong>🔗 RSVP:</strong> <a href={rsvp} target="_blank" rel="noopener noreferrer">{rsvp}</a></p>
-          )}
-        </div>
+      <h1>🎉 {event || 'Event Details'}</h1>
+      {date && <p><strong>📅 Date:</strong> {date}</p>}
+      {location && <p><strong>📍 Location:</strong> {location}</p>}
+      {rsvp ? (
+        <p>
+          <a href={rsvp} target="_blank" rel="noopener noreferrer">
+            ✅ RSVP Now
+          </a>
+        </p>
       ) : (
-        <p>No event details provided.</p>
+        <p>No RSVP link provided.</p>
       )}
     </Layout>
   );
